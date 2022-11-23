@@ -12,7 +12,7 @@ Active the virtual enviorment
 ```
 .\venv\Scripts\activate
 ```
-Install required dependecies
+Install required dependencies
 ```
 pip install -r requirements.txt
 ```
@@ -37,7 +37,7 @@ Active the virtual enviorment
 ```
 source ./venv/bin/activate
 ```
-Install required dependecies
+Install required dependencies
 ```
 pip install -r requirements.txt
 ```
