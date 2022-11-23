@@ -3,6 +3,7 @@
 Remoth is a home automation tool to send key events to the host PC over WIFI using either a mobile device or another PC. The idea is to have a minimalistic and lightweight API to talk with.
 
 # Build from source:
+## Windows
 Create a virtualenv
 ```
 python -m venv venv
@@ -17,9 +18,33 @@ pip install -r requirements.txt
 ```
 Build the exe file
 ```
-pyinstaller -w -F --add-data "static;static" app.py --icon "icon.ico" --name "Remoth" --clean
+pyinstaller -w -F --add-data "static:static" app.py --icon "icon.ico" --name "Remoth" --clean
 ```
-
+## OSX
+Install latest python version supported by pyinstaller
+```
+env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.7.13
+```
+Activate pyenv
+```
+pyenv shell 3.7.13
+```
+Create a virtualenv
+```
+python -m venv venv
+```
+Active the virtual enviorment
+```
+source ./venv/bin/activate
+```
+Install required dependecies
+```
+pip install -r requirements.txt
+```
+Build the app file
+```
+pyinstaller -w -F --add-data "static:static" app.py --icon "icon.ico" --name "Remoth" --clean
+```
 # Usage:
 Make sure that all your devices you wish to control are in one private network.
 
