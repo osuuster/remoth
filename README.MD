@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 Build the exe file
 ```
-pyinstaller -w -F --add-data "static:static" app.py --icon "icon.ico" --name "Remoth" --clean
+pyinstaller -w -F --add-data "static;static" app.py --icon "icon.ico" --name "Remoth" --clean
 ```
 ## OSX
 Install latest python version supported by pyinstaller
