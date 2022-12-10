@@ -3,7 +3,7 @@ from os import path
 from threading import Thread
 
 from flask import Flask
-from keyboard import press
+from keyboard import send
 from PIL import Image
 from pystray import Icon, Menu, MenuItem
 
@@ -39,7 +39,7 @@ def press_key(key):
         current_volume = int(osascript('get volume settings')[1].split(',')[0].split(':')[1])
         osascript(f"set volume output volume {current_volume + inc}")
         return f"{key} pressed"
-    press(key)
+    send(key)
     return f"{key} pressed"
 
 
