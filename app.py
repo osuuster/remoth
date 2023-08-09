@@ -6,7 +6,7 @@ from flask import Flask
 from keyboard import send
 from PIL import Image
 from pystray import Icon, Menu, MenuItem
-from mouse import move, click
+import mouse
 
 if sys.platform == "linux" or sys.platform == "linux2":
     platform = "linux"
@@ -45,13 +45,18 @@ def press_key(key):
 @app.route("/move_mouse/<position>")
 def move_mouse(position):
     x,y = position.split("|")
-    move(x, y, absolute=False)
+    mouse.move(x, y, absolute=False)
     return f"Moved mouse x:{x} y:{y}"
 
 @app.route("/click_mouse")
 def click_mouse():
-    click()
+    mouse.click()
     return "Clicked mouse"
+
+@app.route("/scroll_mouse/<position>")
+def scroll_mouse(position):
+    mouse.wheel(int(position)/20)
+    return "Scrolled mouse"
 
 @app.route("/")
 def index():
